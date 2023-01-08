@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/style.css"/>
         <title>Welcome</title>
     </head>
-    <body>
+    <body onload="loadSwitches()">
         <h1>
             <time id="time"></time>
             <span id="am_pm"></span>
@@ -23,8 +23,23 @@
 
         <script src="js/main.js"></script>
     </body>
-    <label class="switch">
-        <input type="checkbox" id="switch" onclick="toggleAmPm()">
-        <span class="slider round"></span>
-    </label>
-</html>
+    
+    <fieldset id="switch_hub">
+        <label class="switch">
+            <input type="checkbox" id="switch1" onclick="toggleAmPm()">
+            <span class="slider round"></span>
+        </label>
+        <br><br>
+        <label class="switch">
+            <input type="checkbox" id="switch2" onclick="toggleMilitary()">
+            <span class="slider round"></span>
+        </label>
+        <br><br>
+        <label class="switch">
+            <input type="checkbox" id="switch3">
+            <span class="slider round"></span>
+        </label>
+    </fieldset>
+
+</table>
+</html>                                                                                                                                         
