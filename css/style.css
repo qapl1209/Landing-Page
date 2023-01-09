@@ -25,6 +25,7 @@ body {
     position: fixed;
     padding-left: 1rem;
     padding-top: 5rem;
+    display: inline;
 }
 
 h1 {
@@ -38,6 +39,13 @@ h2 {
 
 fieldset {
     border: 0;
+}
+
+#switch_hub {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1rem;
 }
 
 .switch {
@@ -64,6 +72,7 @@ fieldset {
     backdrop-filter: blur(10px);
     -webkit-transition: .4s;
     transition: .4s;
+    box-shadow: 0 0 0.5rem grey;
 }
 
 .slider:before {

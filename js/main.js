@@ -16,26 +16,25 @@ function showTime() {
 
     //Output Time
     time.textContent = `${addZero(hour)}:${addZero(min)}:${addZero(sec)}`;
-    
-    setTimeout(showTime, 1000);
+
+    setTimeout(showTime, 175);
 }
 
 let showAmPm;
 
 // Toggle showAmPm
 function toggleAmPm() {
-    let today = new Date(),
-        hour = today.getHours();
-    amPm.textContent = hour < 12 ? 'am' : 'pm';
-
     showAmPm = !showAmPm;
     displayAmPm();
 }
 
 function displayAmPm() {
-    if(showAmPm) amPm.style.display = 'inline';
-    else amPm.style.display = 'none';
-    setTimeout(displayAmPm, 1000); 
+    let today = new Date(),
+        hour = today.getHours();
+    if(showAmPm){
+        amPm.textContent = hour < 12 ? 'am' : 'pm';
+    }
+    else amPm.textContent = '';
 }
 
 let military;
@@ -181,20 +180,24 @@ function saveSwitches(e){
     }
 }
 
+// Load switch states from localStorage, called onload
 function loadSwitches() {
     const switches = document.querySelectorAll('input[type=checkbox]');
     for (i = 0; i < switches.length; i++) {
         switches[i].checked = localStorage.getItem(switches[i].id) === 'true';
     }
-    showAmPm = localStorage.getItem('switch1').checked;
-    military = localStorage.getItem('switch2').checked;
-    
+
+    showAmPm = document.getElementById('1').checked;
+    military = document.getElementById('2').checked;
+
     displayAmPm();
-    showTime();
-    showGreetingBg();
-    getName();
-    getFocus();
 }
+
+showTime();
+showGreetingBg();
+getName();
+getFocus();
+
 
 window.addEventListener('beforeunload', saveSwitches);
 
@@ -203,4 +206,3 @@ myName.addEventListener('blur', setName);
 
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('blur', setFocus)
-
