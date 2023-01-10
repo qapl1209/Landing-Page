@@ -4,7 +4,10 @@ const time = document.getElementById('time'),
     myName = document.getElementById('name'),
     focus = document.getElementById('focus'), 
     amPm = document.getElementById('am_pm');
-// Show Time
+
+    let showAmPm, military;
+
+    // Show Time
 function showTime() {
     let today = new Date(),
         hour = today.getHours(),
@@ -19,8 +22,6 @@ function showTime() {
 
     setTimeout(showTime, 175);
 }
-
-let showAmPm;
 
 // Toggle showAmPm
 function toggleAmPm() {
@@ -37,8 +38,6 @@ function displayAmPm() {
     else amPm.textContent = '';
 }
 
-let military;
-
 // Toggle 2412
 function toggleMilitary() {
     military = !military;
@@ -53,8 +52,7 @@ function addZero(n) {
 function showGreetingBg() {
     let today = new Date(),
         hour = today.getHours();
-    
-    // greeting.textContent = 'no';
+
 
     let phrase = '';
     let background = '';
@@ -197,7 +195,6 @@ showTime();
 showGreetingBg();
 getName();
 getFocus();
-
 
 window.addEventListener('beforeunload', saveSwitches);
 

@@ -19,22 +19,20 @@
         </h1>
 
         <h2>What Is Your Focus For Today?</h2>
-        <h2 id="focus" contenteditable=""true></h2>
+        <h2 id="focus" contenteditable="true"></h2>
+
+        <fieldset id="switch_hub">
+            <label class="switch">
+                <input type="checkbox" id="1" onclick="toggleAmPm()">
+                <span class="slider round"></span>
+            </label>
+            <br><br>
+            <label class="switch">
+                <input type="checkbox" id="2" onclick="toggleMilitary()">
+                <span class="slider round"></span>
+            </label>
+        </fieldset>
 
         <script src="js/main.js"></script>
     </body>
-    
-    <fieldset id="switch_hub">
-        <label class="switch">
-            <input type="checkbox" id="1" onclick="toggleAmPm()">
-            <span class="slider round"></span>
-        </label>
-        <br><br>
-        <label class="switch">
-            <input type="checkbox" id="2" onclick="toggleMilitary()">
-            <span class="slider round"></span>
-        </label>
-    </fieldset>
-
-</table>
 </html>                                                                                                                                         
