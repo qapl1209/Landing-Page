@@ -5,9 +5,10 @@ const time = document.getElementById('time'),
     focus = document.getElementById('focus'), 
     amPm = document.getElementById('am_pm');
 
-    let showAmPm, military;
+// Page Options
+let showAmPm, military;
 
-    // Show Time
+// Show Time
 function showTime() {
     let today = new Date(),
         hour = today.getHours(),
@@ -23,16 +24,17 @@ function showTime() {
     setTimeout(showTime, 175);
 }
 
-// Toggle showAmPm
+// Toggle showAmPm boolean
 function toggleAmPm() {
     showAmPm = !showAmPm;
     displayAmPm();
 }
 
+// Set amPm textContent based on showAmPm boolean
 function displayAmPm() {
     let today = new Date(),
         hour = today.getHours();
-    if(showAmPm){
+    if(showAmPm) {
         amPm.textContent = hour < 12 ? 'am' : 'pm';
     }
     else amPm.textContent = '';
@@ -58,7 +60,7 @@ function showGreetingBg() {
     let background = '';
     let textColor = 'Black';
     
-    switch(hour){
+    switch(hour) {
         case 0:
         case 1:
             phrase = 'Good Night,'
@@ -126,7 +128,7 @@ function showGreetingBg() {
 
 // Get Name
 function getName() {
-    if(localStorage.getItem('name') === null){
+    if(localStorage.getItem('name') === null) {
         myName.textContent = '[Enter Name]';
     }
     else {
@@ -171,7 +173,7 @@ function setFocus(e) {
 }
 
 // Saves state of switches for next load
-function saveSwitches(e){
+function saveSwitches(e) {
     const switches = document.querySelectorAll('input[type=checkbox]');
     for(let i = 0; i < switches.length; i++) {
         localStorage.setItem(switches[i].id, switches[i].checked);
