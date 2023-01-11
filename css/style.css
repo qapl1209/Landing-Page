@@ -41,6 +41,15 @@ fieldset {
     border: 0;
 }
 
+#switch_captions {
+    position: fixed;
+    top: 0;
+    right: 2rem;
+    padding: 1rem;
+    text-align: right;
+
+}
+
 #switch_hub {
     position: fixed;
     top: 0;
@@ -61,6 +70,7 @@ fieldset {
     height: 0;
 }
 
+/* slider specifications */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -75,6 +85,7 @@ fieldset {
     box-shadow: 0 0 0.5rem grey;
 }
 
+/* slider before checked */
 .slider:before {
     position: absolute;
     content: "";
