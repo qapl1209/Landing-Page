@@ -44,9 +44,10 @@ fieldset {
 #switch_captions {
     position: fixed;
     top: 0;
-    right: 2rem;
+    right: 3.6rem;
     padding: 1rem;
     text-align: right;
+    line-height: 1.25rem;
 
 }
 
